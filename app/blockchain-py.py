@@ -2,12 +2,15 @@
 import hashlib
 import json
 from time import time
+from typing import Any, List
 
 
 class Blockchain(object):
-    def __init__(self):
-        self.chain = []
-        self.pending_transactions = []
+    """ blockchain min class """
+
+    def __init__(self) -> None:
+        self.chain: List[Any] = []
+        self.pending_transactions: List[Any] = []
 
         self.new_block(
             previous_hash="The Times 03/Jan/2009 Chancellor on brink of second bailout for banks.",
@@ -16,7 +19,8 @@ class Blockchain(object):
 
     # Create a new block listing key/value pairs of block information in a JSON object. Reset the list of pending transactions & append the newest block to the chain.
 
-    def new_block(self, proof, previous_hash=None):
+    def new_block(self, proof: Any, previous_hash=None) -> Any:
+        """ New Block """
         block = {
             "index": len(self.chain) + 1,
             "timestamp": time(),
