@@ -6,7 +6,7 @@ from typing import Any, List
 
 
 class Blockchain(object):
-    """ blockchain min class """
+    """ blockchain main class """
 
     def __init__(self) -> None:
         self.chain: List[Any] = []
